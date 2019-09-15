@@ -8,29 +8,24 @@ import com.kotlin.base.injection.module.ActivityModule
 import com.kotlin.base.injection.module.LifecycleProviderModule
 import com.kotlin.base.presenter.BasePresenter
 import com.kotlin.base.presenter.view.BaseView
+import com.kotlin.base.widqets.ProgressLoading
+import org.jetbrains.anko.toast
 import javax.inject.Inject
 
 open abstract class BaseMvpActivity<T : BasePresenter<*>> : BaseActivity(), BaseView {
-    override fun showLoading() {
-
-    }
-
-    override fun hideLoading() {
-    }
-
-    override fun onError() {
-    }
 
     @Inject
     lateinit var mPresenter: T
 
     lateinit var mActivityComponent: ActivityComponent
 
+    private lateinit var mLoadingDialog: ProgressLoading
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         initActivityInjection()
         injectComponent()
+        mLoadingDialog = ProgressLoading.crate(this)
     }
 
     abstract fun injectComponent()
@@ -41,6 +36,18 @@ open abstract class BaseMvpActivity<T : BasePresenter<*>> : BaseActivity(), Base
             .activityModule(ActivityModule(this))
             .lifecycleProviderModule(LifecycleProviderModule(this))
             .build()
+    }
+
+    override fun showLoading() {
+        mLoadingDialog.showLoading()
+    }
+
+    override fun hideLoading() {
+        mLoadingDialog.hideLoading()
+    }
+
+    override fun onError(text: String) {
+        toast(text)
     }
 
 }
