@@ -1,6 +1,6 @@
 package com.kotlin.user.presenter
 
-import com.kotlin.base.ext.execute
+import com.kotlin.base.ext.excute
 import com.kotlin.base.presenter.BasePresenter
 import com.kotlin.base.rx.BaseSubscriber
 import com.kotlin.user.presenter.view.RegisterView
@@ -13,10 +13,11 @@ class RegisterPresenter @Inject constructor() : BasePresenter<RegisterView>() {
 
     fun register(mobile: String, verifyCode: String, pwd: String) {
         userService.register(mobile, verifyCode, pwd)
-            .execute(object : BaseSubscriber<Boolean>() {
+            .excute(object : BaseSubscriber<Boolean>() {
                 override fun onNext(t: Boolean) {
-                    mView.onRegisterResult(t)
+                    if (t)
+                        mView.onRegisterResult("注册成功")
                 }
-            })
+            }, lifecycleProvider)
     }
 }

@@ -60,4 +60,8 @@ dependencies {
     api "com.google.dagger:dagger:$dragger_version"
     kapt "com.google.dagger:dagger-compiler:$dragger_version"
 
+    //RxLifecycle
+    api "com.trello:rxlifecycle-kotlin:$rx_lifecycle_version"
+    api "com.trello:rxlifecycle-components:$rx_lifecycle_version"
+
 }

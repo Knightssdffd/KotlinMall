@@ -2,7 +2,6 @@ package com.kotlin.mall.ui.activity
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import com.kotlin.mall.R
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -12,7 +11,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         mBut.setOnClickListener {
-            
+
 
         }
     }
