@@ -47,7 +47,8 @@ dependencies {
 
     // Anko Commons
     api "org.jetbrains.anko:anko-commons:$anko_version"
-
+    // Support-v4 (only Anko Commons)
+    api "org.jetbrains.anko:anko-support-v4-commons:$anko_version"
     // RxKotlin RxAndroid
     api "io.reactivex:rxkotlin:$rx_kotlin_version"
     api "io.reactivex:rxandroid:$rx_android_version"
@@ -64,6 +65,7 @@ dependencies {
     //RxLifecycle
     api "com.trello:rxlifecycle-kotlin:$rx_lifecycle_version"
     api "com.trello:rxlifecycle-components:$rx_lifecycle_version"
-
+    //Glide
+    api "com.github.bumptech.glide:glide:$glide_version"
 
 }
