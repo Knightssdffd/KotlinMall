@@ -1,4 +1,4 @@
-package com.kotlin.base.widqets
+package com.kotlin.base.widgets
 
 import android.app.Dialog
 import android.content.Context

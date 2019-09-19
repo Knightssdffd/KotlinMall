@@ -8,7 +8,7 @@ import com.kotlin.base.injection.module.ActivityModule
 import com.kotlin.base.injection.module.LifecycleProviderModule
 import com.kotlin.base.presenter.BasePresenter
 import com.kotlin.base.presenter.view.BaseView
-import com.kotlin.base.widqets.ProgressLoading
+import com.kotlin.base.widgets.ProgressLoading
 import org.jetbrains.anko.toast
 import javax.inject.Inject
 
