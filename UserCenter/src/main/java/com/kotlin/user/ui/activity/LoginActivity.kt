@@ -17,7 +17,7 @@ import org.jetbrains.anko.startActivity
 /**
  * 登录界面
  */
-class LoginActivity : BaseMvpActivity<LoginPresenter>(), LoginView,  View.OnClickListener {
+class LoginActivity : BaseMvpActivity<LoginPresenter>(), LoginView, View.OnClickListener {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,6 +58,9 @@ class LoginActivity : BaseMvpActivity<LoginPresenter>(), LoginView,  View.OnClic
             }
             R.id.mRightTv -> {
                 startActivity<RegisterActivity>()
+            }
+            R.id.mForgetPwdTv -> {
+                startActivity<ForgetPwdActivity>()
             }
         }
     }
