@@ -64,5 +64,6 @@ class ResetPwdActivity : BaseMvpActivity<ResetPwdPresenter>(), ResetPwdView {
     override fun onResetPwdResult(result: String) {
         toast(result)
         startActivity(intentFor<LoginActivity>().singleTop().clearTop())
+
     }
 }
