@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/MatchWrap.Vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activity.MainActivity">
-    <Button
-        android:id="@+id/mBut"
-        android:text="aaaaaaaa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    android:gravity="bottom">
+
+    <FrameLayout
+        android:id="@+id/mConatier"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
 
 
+    <com.kotlin.base.widgets.BottomNavBar
+        android:id="@+id/mBottomNavBar"
+        style="@style/MatchWrap"
+        android:layout_gravity="bottom" />
 
-
-</RelativeLayout>
+</LinearLayout>

@@ -76,5 +76,9 @@ dependencies {
     api "com.bigkoo:alertview:${alert_view_version}"
     //七牛云
     api "com.qiniu:qiniu-android-sdk:7.3.15"
+    //底部导航
+    api "com.ashokvarma.android:bottom-navigation-bar:2.0.2"
+    //轮播
+    api "com.youth.banner:banner:1.4.10"  //最新版本
 
 }

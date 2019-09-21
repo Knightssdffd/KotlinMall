@@ -25,11 +25,21 @@ class UserRepository @Inject constructor() {
 
 
     fun forgetPwd(mobile: String, verifyCode: String): Observable<BaseResp<String>> {
-        return RetrofitFactory.instance.create(UserAip::class.java).forgetPwd(ForgetPwdReq(mobile, verifyCode))
+        return RetrofitFactory.instance.create(UserAip::class.java)
+            .forgetPwd(ForgetPwdReq(mobile, verifyCode))
     }
 
     fun resetPwd(mobile: String, pwd: String): Observable<BaseResp<String>> {
-        return RetrofitFactory.instance.create(UserAip::class.java).resetPwd(ResetPwdReq(mobile, pwd))
+        return RetrofitFactory.instance.create(UserAip::class.java)
+            .resetPwd(ResetPwdReq(mobile, pwd))
+    }
+
+    fun editUser(
+        userIcon: String, userName: String,
+        userGender: String, userSign: String
+    ): Observable<BaseResp<UserInfo>> {
+        return RetrofitFactory.instance.create(UserAip::class.java)
+            .editUser(EditUserReq(userIcon, userName, userGender, userSign))
     }
 
 }
