@@ -48,7 +48,7 @@ class HomeFragment : BaseFragment() {
     }
 
     private fun initNews() {
-//公告
-
+        //公告
+        mNewsFlipperView.setData(arrayOf("夏日炎炎，第一波父类啊啊啊啊·1", "不不不不不不不不"))
     }
 }
