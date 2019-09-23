@@ -52,6 +52,7 @@ class LoginActivity : BaseMvpActivity<LoginPresenter>(), LoginView, View.OnClick
         toast("登录成功")
         UserPrefsUtils.putUserInfo(result)
         startActivity<UserInfoActivity>()
+        finish()
     }
 
     override fun onClick(v: View) {

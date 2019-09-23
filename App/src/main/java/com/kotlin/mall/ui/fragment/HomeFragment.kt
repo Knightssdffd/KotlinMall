@@ -74,16 +74,13 @@ class HomeFragment : BaseFragment() {
 
     private fun initTopic() {
         //话题
-        mTopicPager.adapter = TopicAdapter(
-            this.context!!,
-            listOf(
+        mTopicPager.adapter = TopicAdapter(this.context!!, listOf(
                 HOME_TOPIC_ONE,
                 HOME_TOPIC_TWO,
                 HOME_TOPIC_THREE,
                 HOME_TOPIC_FOUR,
                 HOME_TOPIC_FIVE
-            )
-        )
+            ))
         mTopicPager.currentItem = 1
         mTopicPager.offscreenPageLimit = 5
         CoverFlow.Builder().with(mTopicPager).scale(0.3f).pagerMargin(-30.0f).spaceSize(0.0f)
