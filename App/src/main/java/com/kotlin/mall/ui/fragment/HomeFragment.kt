@@ -1,16 +1,15 @@
 package com.kotlin.mall.ui.fragment
 
 import android.os.Bundle
+import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.kotlin.base.ui.fragment.BaseFragment
 import com.kotlin.base.widgets.BannerImageLoader
 import com.kotlin.mall.R
-import com.kotlin.mall.common.HOME_BANNER_FOUR
-import com.kotlin.mall.common.HOME_BANNER_ONE
-import com.kotlin.mall.common.HOME_BANNER_THREE
-import com.kotlin.mall.common.HOME_BANNER_TWO
+import com.kotlin.mall.common.*
+import com.kotlin.mall.ui.adapter.HomeDiscountAdapter
 import com.youth.banner.BannerConfig
 import com.youth.banner.Transformer
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -28,6 +27,7 @@ class HomeFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
         initBanner()
         initNews()
+        initDiscount()
     }
 
 
@@ -51,4 +51,26 @@ class HomeFragment : BaseFragment() {
         //公告
         mNewsFlipperView.setData(arrayOf("夏日炎炎，第一波父类啊啊啊啊·1", "不不不不不不不不"))
     }
+
+    private fun initDiscount() {
+        val manager = LinearLayoutManager(context)
+        manager.orientation = LinearLayoutManager.HORIZONTAL
+        mHomeDiscountRv.layoutManager=manager
+
+        val discountAdapter = HomeDiscountAdapter(this.activity!!)
+        mHomeDiscountRv.adapter = discountAdapter
+        discountAdapter.setData(
+            mutableListOf(
+                HOME_DISCOUNT_ONE,
+                HOME_DISCOUNT_TWO,
+                HOME_DISCOUNT_THREE,
+                HOME_DISCOUNT_FOUR,
+                HOME_DISCOUNT_FIVE
+            )
+        )
+
+
+    }
+
+
 }
