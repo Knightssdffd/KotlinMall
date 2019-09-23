@@ -10,9 +10,11 @@ import com.kotlin.base.widgets.BannerImageLoader
 import com.kotlin.mall.R
 import com.kotlin.mall.common.*
 import com.kotlin.mall.ui.adapter.HomeDiscountAdapter
+import com.kotlin.mall.ui.adapter.TopicAdapter
 import com.youth.banner.BannerConfig
 import com.youth.banner.Transformer
 import kotlinx.android.synthetic.main.fragment_home.*
+import me.crosswall.lib.coverflow.CoverFlow
 
 class HomeFragment : BaseFragment() {
     override fun onCreateView(
@@ -28,8 +30,8 @@ class HomeFragment : BaseFragment() {
         initBanner()
         initNews()
         initDiscount()
+        initTopic()
     }
-
 
     private fun initBanner() {
         mHomeBanner.setImageLoader(BannerImageLoader())
@@ -55,7 +57,7 @@ class HomeFragment : BaseFragment() {
     private fun initDiscount() {
         val manager = LinearLayoutManager(context)
         manager.orientation = LinearLayoutManager.HORIZONTAL
-        mHomeDiscountRv.layoutManager=manager
+        mHomeDiscountRv.layoutManager = manager
 
         val discountAdapter = HomeDiscountAdapter(this.activity!!)
         mHomeDiscountRv.adapter = discountAdapter
@@ -68,9 +70,24 @@ class HomeFragment : BaseFragment() {
                 HOME_DISCOUNT_FIVE
             )
         )
-
-
     }
 
+    private fun initTopic() {
+        //话题
+        mTopicPager.adapter = TopicAdapter(
+            this.context!!,
+            listOf(
+                HOME_TOPIC_ONE,
+                HOME_TOPIC_TWO,
+                HOME_TOPIC_THREE,
+                HOME_TOPIC_FOUR,
+                HOME_TOPIC_FIVE
+            )
+        )
+        mTopicPager.currentItem = 1
+        mTopicPager.offscreenPageLimit = 5
+        CoverFlow.Builder().with(mTopicPager).scale(0.3f).pagerMargin(-30.0f).spaceSize(0.0f)
+            .build()
+    }
 
 }

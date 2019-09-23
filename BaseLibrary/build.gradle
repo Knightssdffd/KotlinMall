@@ -82,4 +82,6 @@ dependencies {
     api "com.youth.banner:banner:1.4.10"  //最新版本
     //标签
     api 'com.github.shts:TriangleLabelView:1.1.2'
+    //画廊
+    api 'com.github.crosswall:Android-Coverflow:release-v1.0.5'
 }
