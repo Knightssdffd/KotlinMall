@@ -1,11 +1,11 @@
-package com.kotlin.user.server.impl
+package com.kotlin.user.service.impl
 
 
 import com.kotlin.base.ext.convert
 import com.kotlin.base.ext.convertBoolean
 import com.kotlin.user.data.protocol.UserInfo
 import com.kotlin.user.data.repository.UserRepository
-import com.kotlin.user.server.UserServer
+import com.kotlin.user.service.UserServer
 import rx.Observable
 import javax.inject.Inject
 

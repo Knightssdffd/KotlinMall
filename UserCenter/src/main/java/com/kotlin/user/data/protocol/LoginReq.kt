@@ -1,11 +1,6 @@
 package com.kotlin.user.data.protocol
 
-/**
- * Created by  幻忧 on  2019/9/9 13:17
- *  @function
+/*
+    登录请求体
  */
-data class LoginReq(
-    val mobile: String,
-    val pwd: String,
-    val pushId: String
-)
+data class LoginReq(val mobile:String, val pwd:String, val pushId:String)

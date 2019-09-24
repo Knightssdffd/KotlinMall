@@ -5,8 +5,8 @@ import com.kotlin.base.presenter.BasePresenter
 import com.kotlin.base.rx.BaseSubscriber
 import com.kotlin.user.data.protocol.UserInfo
 import com.kotlin.user.presenter.view.UserInfoView
-import com.kotlin.user.server.UploadServer
-import com.kotlin.user.server.UserServer
+import com.kotlin.user.service.UploadServer
+import com.kotlin.user.service.UserServer
 import javax.inject.Inject
 
 class UserInfoPresenter @Inject constructor() : BasePresenter<UserInfoView>() {

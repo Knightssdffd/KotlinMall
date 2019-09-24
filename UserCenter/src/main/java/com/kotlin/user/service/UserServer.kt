@@ -1,6 +1,5 @@
-package com.kotlin.user.server
+package com.kotlin.user.service
 
-import android.graphics.drawable.Icon
 import com.kotlin.user.data.protocol.UserInfo
 import rx.Observable
 

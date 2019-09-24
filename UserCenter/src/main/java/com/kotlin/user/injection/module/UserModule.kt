@@ -1,7 +1,7 @@
 package com.kotlin.user.injection.module
 
-import com.kotlin.user.server.UserServer
-import com.kotlin.user.server.impl.UserServiceImpl
+import com.kotlin.user.service.UserServer
+import com.kotlin.user.service.impl.UserServiceImpl
 import dagger.Module
 import dagger.Provides
 

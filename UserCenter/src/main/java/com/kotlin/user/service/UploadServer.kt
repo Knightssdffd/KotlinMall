@@ -1,4 +1,4 @@
-package com.kotlin.user.server
+package com.kotlin.user.service
 
 import rx.Observable
 

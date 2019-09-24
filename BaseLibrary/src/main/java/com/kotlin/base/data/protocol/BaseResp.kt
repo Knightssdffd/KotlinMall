@@ -1,9 +1,5 @@
 package com.kotlin.base.data.protocol
 
-/**
- * Created by  幻忧 on  2019/9/9 13:13
- *  @function
- */
 
 /**
 能用响应对象
