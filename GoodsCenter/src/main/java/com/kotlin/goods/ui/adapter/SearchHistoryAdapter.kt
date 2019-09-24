@@ -7,29 +7,25 @@ import android.view.View
 import android.view.ViewGroup
 import com.kotlin.base.ui.adapter.BaseRecyclerViewAdapter
 import com.kotlin.goods.R
-import com.kotlin.goods.data.protocol.Category
-import kotlinx.android.synthetic.main.layout_top_category_item.view.*
+import kotlinx.android.synthetic.main.layout_search_history_item.view.*
 
 /*
-    一级商品分类 Adapter
+    搜索历史记录
  */
-class TopCategoryAdapter(context: Context) :
-    BaseRecyclerViewAdapter<Category, TopCategoryAdapter.ViewHolder>(context) {
+class SearchHistoryAdapter(context: Context) :
+    BaseRecyclerViewAdapter<String, SearchHistoryAdapter.ViewHolder>(context) {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view =
-            LayoutInflater.from(mContext).inflate(R.layout.layout_top_category_item, parent, false)
+        val view = LayoutInflater.from(mContext)
+            .inflate(R.layout.layout_search_history_item, parent, false)
         return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         super.onBindViewHolder(holder, position)
         val model = dataList[position]
-        //分类名称
-        holder.itemView.mTopCategoryNameTv.text = model.categoryName
-        //是否被选中
-        holder.itemView.mTopCategoryNameTv.isSelected = model.isSelected
+        holder.itemView.mSearchHistoryTv.text = model
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view)
-
 }

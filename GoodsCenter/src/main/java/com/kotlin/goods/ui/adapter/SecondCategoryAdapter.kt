@@ -16,9 +16,7 @@ import kotlinx.android.synthetic.main.layout_second_category_item.view.*
  */
 class SecondCategoryAdapter(context: Context): BaseRecyclerViewAdapter<Category, SecondCategoryAdapter.ViewHolder>(context) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(mContext)
-                .inflate(R.layout.layout_second_category_item,parent,false)
-
+        val view = LayoutInflater.from(mContext).inflate(R.layout.layout_second_category_item,parent,false)
         return ViewHolder(view)
     }
 

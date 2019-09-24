@@ -17,15 +17,12 @@ import kotlinx.android.synthetic.main.layout_goods_item.view.*
 /*
     商品数据适配器
  */
-class GoodsAdapter(context: Context) : BaseRecyclerViewAdapter<Goods, GoodsAdapter.ViewHolder>(context) {
+class GoodsAdapter(context: Context) :
+    BaseRecyclerViewAdapter<Goods, GoodsAdapter.ViewHolder>(context) {
 
-   override fun onCreateViewHolder(parent: ViewGroup,
-                           viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(mContext)
-                .inflate(R.layout.layout_goods_item,
-                        parent,
-                        false)
-       return ViewHolder(view)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val view = LayoutInflater.from(mContext).inflate(R.layout.layout_goods_item, parent, false)
+        return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -36,9 +33,11 @@ class GoodsAdapter(context: Context) : BaseRecyclerViewAdapter<Goods, GoodsAdapt
         //商品描述
         holder.itemView.mGoodsDescTv.text = model.goodsDesc
         //商品价格
-        holder.itemView.mGoodsPriceTv.text = YuanFenConverter.changeF2YWithUnit(model.goodsDefaultPrice)
+        holder.itemView.mGoodsPriceTv.text =
+            YuanFenConverter.changeF2YWithUnit(model.goodsDefaultPrice)
         //商品销量及库存
-        holder.itemView.mGoodsSalesStockTv.text = "销量${model.goodsSalesCount}件     库存${model.goodsStockCount}"
+        holder.itemView.mGoodsSalesStockTv.text =
+            "销量${model.goodsSalesCount}件     库存${model.goodsStockCount}"
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view)
